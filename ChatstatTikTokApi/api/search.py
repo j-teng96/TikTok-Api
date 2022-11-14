@@ -77,15 +77,19 @@ class Search:
 
         cursor = offset
 
-        spawn = requests.get(
-            "https://www.tiktok.com",
-            proxies=Search.parent._format_proxy(processed.proxy),
-            **Search.parent._requests_extra_kwargs,
-            headers={
-                'User-Agent': "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.52 Safari/536.5"
-            }
-        )
-        ttwid = spawn.cookies.get_dict()["ttwid"]
+        try:
+            session = requests.Session()
+            spawn = session.get(
+                "https://www.tiktok.com",
+                proxies=Search.parent._format_proxy(processed.proxy),
+                **Search.parent._requests_extra_kwargs,
+                headers={
+                    'User-Agent': "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.52 Safari/536.5"
+                }
+            )
+            ttwid = session.cookies.get_dict()["ttwid"]
+        except:
+            ttwid = ''
 
         # For some reason when <= it can be off by one.
         while cursor - offset <= count:

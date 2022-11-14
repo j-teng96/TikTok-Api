@@ -202,7 +202,9 @@ class ChatstatTikTokApi:
             )
 
         if self._signer_url is None:
-            self._browser = asyncio.get_event_loop().run_until_complete(
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            self._browser = loop.run_until_complete(
                 asyncio.gather(browser.create(**kwargs))
             )[0]
 

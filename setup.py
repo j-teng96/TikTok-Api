@@ -8,7 +8,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setuptools.setup(
     name="ChatstatTikTokApi",
     packages=setuptools.find_packages(),
-    version="5.3.1",
+    version="5.3.2",
     license="MIT",
     description="The Unofficial TikTok API Wrapper in Python 3 for our own Chatstat.",
     author="J Teng",
