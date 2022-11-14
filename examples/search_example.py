@@ -1,6 +1,6 @@
-from TikTokApi import TikTokApi
+from ChatstatTikTokApi import ChatstatTikTokApi
 
-with TikTokApi() as api:
+with ChatstatTikTokApi() as api:
     for user in api.search.users("therock"):
         print(user.username)
 

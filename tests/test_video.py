@@ -1,9 +1,9 @@
-from TikTokApi import TikTokApi
+from ChatstatTikTokApi import ChatstatTikTokApi
 import os
 
 
 def test_video_id_from_url():
-    with TikTokApi(custom_verify_fp=os.environ.get("verifyFp", None)) as api:
+    with ChatstatTikTokApi(custom_verify_fp=os.environ.get("verifyFp", None)) as api:
         url = "https://www.tiktok.com/@therock/video/7107272719166901550"
         video = api.video(url=url)
 
@@ -16,7 +16,7 @@ def test_video_id_from_url():
 
 
 def test_video_info():
-    with TikTokApi(custom_verify_fp=os.environ.get("verifyFp", None)) as api:
+    with ChatstatTikTokApi(custom_verify_fp=os.environ.get("verifyFp", None)) as api:
         video_id = "7107272719166901550"
         video = api.video(id=video_id)
 
@@ -26,7 +26,7 @@ def test_video_info():
 
 
 def test_video_bytes():
-    with TikTokApi(custom_verify_fp=os.environ.get("verifyFp", None)) as api:
+    with ChatstatTikTokApi(custom_verify_fp=os.environ.get("verifyFp", None)) as api:
         video_id = "7107272719166901550"
         video = api.video(id=video_id)
 

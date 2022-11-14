@@ -72,7 +72,7 @@ ERROR_CODES = {
 }
 
 
-class TikTokApi:
+class ChatstatTikTokApi:
     _is_context_manager = False
     user = User
     search = Search
@@ -96,7 +96,7 @@ class TikTokApi:
             *args,
             **kwargs,
     ):
-        """The TikTokApi class. Used to interact with TikTok. This is a singleton
+        """The ChatstatTikTokApi class. Used to interact with TikTok. This is a singleton
             class to prevent issues from arising with playwright
 
         ##### Parameters

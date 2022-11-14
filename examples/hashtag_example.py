@@ -1,6 +1,6 @@
-from TikTokApi import TikTokApi
+from ChatstatTikTokApi import ChatstatTikTokApi
 
-with TikTokApi() as api:
+with ChatstatTikTokApi() as api:
     tag = api.hashtag(name="funny")
 
     print(tag.info())

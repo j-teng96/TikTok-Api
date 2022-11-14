@@ -1,5 +1,5 @@
-import TikTokApi
-from TikTokApi.browser_utilities.browser import browser
+import ChatstatTikTokApi
+from ChatstatTikTokApi.browser_utilities.browser import browser
 from urllib.parse import quote, urlencode
 from .exceptions import *
 

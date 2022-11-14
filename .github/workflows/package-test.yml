@@ -1,4 +1,4 @@
-name: TikTokApi CI
+name: ChatstatTikTokApi CI
 on:
   push:
     branches:

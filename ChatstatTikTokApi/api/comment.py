@@ -4,7 +4,7 @@ from typing import ClassVar, Optional
 from typing import TYPE_CHECKING, ClassVar, Iterator, Optional
 
 if TYPE_CHECKING:
-    from ..tiktok import TikTokApi
+    from ..tiktok import ChatstatTikTokApi
     from .user import User
 
 
@@ -19,7 +19,7 @@ class Comment:
     ```
     """
 
-    parent: ClassVar[TikTokApi]
+    parent: ClassVar[ChatstatTikTokApi]
 
     id: str
     """The id of the comment"""
@@ -51,7 +51,7 @@ class Comment:
         return self.__str__()
 
     def __str__(self):
-        return f"TikTokApi.comment(comment_id='{self.id}', text='{self.text}')"
+        return f"ChatstatTikTokApi.comment(comment_id='{self.id}', text='{self.text}')"
 
     def __getattr__(self, name):
         if name in ["as_dict"]:
@@ -59,4 +59,4 @@ class Comment:
             self.__extract_from_data()
             return self.__getattribute__(name)
 
-        raise AttributeError(f"{name} doesn't exist on TikTokApi.api.Comment")
+        raise AttributeError(f"{name} doesn't exist on ChatstatTikTokApi.api.Comment")

@@ -28,7 +28,7 @@ Put the error trace below if there's any error thrown.
 
 **Desktop (please complete the following information):**
  - OS: [e.g. Windows 10]
- - TikTokApi Version [e.g. 3.3.1] - if out of date upgrade before posting an issue
+ - ChatstatTikTokApi Version [e.g. 3.3.1] - if out of date upgrade before posting an issue
 
 **Additional context**
 

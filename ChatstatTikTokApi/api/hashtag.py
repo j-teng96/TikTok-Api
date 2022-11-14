@@ -7,7 +7,7 @@ from ..exceptions import *
 from typing import TYPE_CHECKING, ClassVar, Iterator, Optional
 
 if TYPE_CHECKING:
-    from ..tiktok import TikTokApi
+    from ..tiktok import ChatstatTikTokApi
     from .video import Video
 
 
@@ -21,7 +21,7 @@ class Hashtag:
     ```
     """
 
-    parent: ClassVar[TikTokApi]
+    parent: ClassVar[ChatstatTikTokApi]
 
     id: Optional[str]
     """The ID of the hashtag"""
@@ -136,7 +136,7 @@ class Hashtag:
         return self.__str__()
 
     def __str__(self):
-        return f"TikTokApi.hashtag(id='{self.id}', name='{self.name}')"
+        return f"ChatstatTikTokApi.hashtag(id='{self.id}', name='{self.name}')"
 
     def __getattr__(self, name):
         # TODO: Maybe switch to using @property instead
@@ -145,4 +145,4 @@ class Hashtag:
             self.__extract_from_data()
             return self.__getattribute__(name)
 
-        raise AttributeError(f"{name} doesn't exist on TikTokApi.api.Hashtag")
+        raise AttributeError(f"{name} doesn't exist on ChatstatTikTokApi.api.Hashtag")

@@ -1,6 +1,6 @@
-from TikTokApi import TikTokApi
+from ChatstatTikTokApi import ChatstatTikTokApi
 
-with TikTokApi() as api:
+with ChatstatTikTokApi() as api:
     user = api.user(username="therock")
 
     for video in user.videos():

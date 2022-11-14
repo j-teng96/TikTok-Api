@@ -7,7 +7,7 @@ from datetime import datetime
 import requests
 
 if TYPE_CHECKING:
-    from ..tiktok import TikTokApi
+    from ..tiktok import ChatstatTikTokApi
     from .user import User
     from .sound import Sound
     from .hashtag import Hashtag
@@ -24,7 +24,7 @@ class Video:
     ```
     """
 
-    parent: ClassVar[TikTokApi]
+    parent: ClassVar[ChatstatTikTokApi]
 
     id: Optional[str]
     """TikTok's ID of the Video"""
@@ -189,7 +189,7 @@ class Video:
         return self.__str__()
 
     def __str__(self):
-        return f"TikTokApi.video(id='{self.id}')"
+        return f"ChatstatTikTokApi.video(id='{self.id}')"
 
     def __getattr__(self, name):
         # Handle author, sound, hashtags, as_dict
@@ -203,4 +203,4 @@ class Video:
             self.__extract_comments()
             return self.__getattribute__(name)
 
-        raise AttributeError(f"{name} doesn't exist on TikTokApi.api.Video")
+        raise AttributeError(f"{name} doesn't exist on ChatstatTikTokApi.api.Video")
