@@ -6,17 +6,17 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="TikTokApi",
+    name="ChatstatTikTokApi",
     packages=setuptools.find_packages(),
-    version="5.2.2",
+    version="5.3.0",
     license="MIT",
-    description="The Unofficial TikTok API Wrapper in Python 3.",
-    author="David Teather",
-    author_email="contact.davidteather@gmail.com",
-    url="https://github.com/davidteather/tiktok-api",
+    description="The Unofficial TikTok API Wrapper in Python 3 for our own Chatstat.",
+    author="J Teng",
+    author_email="j.teng@chatstat.com",
+    url="https://github.com/j-teng96/TikTok-Api",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    download_url="https://github.com/davidteather/TikTok-Api/tarball/master",
+    download_url="https://github.com/j-teng96/TikTok-Api/tree/master",
     keywords=["tiktok", "python3", "api", "unofficial", "tiktok-api", "tiktok api"],
     install_requires=["requests", "playwright"],
     classifiers=[
